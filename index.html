@@ -12,30 +12,34 @@
     <body>
         <div class="container">
             <div class="calculator">
-                <div id="display"></div>
+                <div id="display">
+                    <div class="prevNum"></div>
+                    <div class="currentNum"></div>
+                </div>
                 <div id="buttons">
-                    <button id="clear" >CE</button>
-                    <button id="clear" >←</button>
-                    <button id="op">%</button>
-                    <button id="op">÷</button>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
-                    <button id="op">×</button>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button id="op">-</button>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button id="op">+</button>
-                    <button>.</button>
-                    <button>0</button>
-                    <button id="equal">=</button>
+                    <button id="clear" data-clear>CE</button>
+                    <button id="clear" data-delete>←</button>
+                    <button id="op" data-op>%</button>
+                    <button id="op" data-op>÷</button>
+                    <button data-num>7</button>
+                    <button data-num>8</button>
+                    <button data-num>9</button>
+                    <button id="op" data-op>×</button>
+                    <button data-num>4</button>
+                    <button data-num>5</button>
+                    <button data-num>6</button>
+                    <button id="op" data-op>-</button>
+                    <button data-num>1</button>
+                    <button data-num>2</button>
+                    <button data-num>3</button>
+                    <button id="op" data-op>+</button>
+                    <button data-period>.</button>
+                    <button data-num>0</button>
+                    <button id="equal" data-equal>=</button>
                 </div>
             </div>
         </div>
-        <footer class="footer">Made by github.com/1uum/ for The Odin Project</footer>
+        <footer class="footer">Made by <a href="https://github.com/1uum/"> github.com/1uum/ </a>  for The Odin Project</footer>
+        <script src="script.js"></script>
     </body>
 </html>
