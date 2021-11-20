@@ -9,7 +9,7 @@ const current = document.querySelector('.currentNum');
 
 let firstValue='';
 let secondValue='';
-let currentOp = undefined;
+let currentOp = null;
 
 numberBttn.forEach((numBttn) =>
     numBttn.addEventListener('click', () => appendNumber(numBttn.textContent))
@@ -18,14 +18,14 @@ operationBttn.forEach((opBttn) => {
     opBttn.addEventListener('click', () => chooseOp(opBttn.textContent))
 });
 
-equalBttn.addEventListener('click', () => operate)
+equalBttn.addEventListener('click', () => compute());
 
 ceBttn.addEventListener('click', () =>{
     current.textContent='';
     previous.textContent='';
     firstValue='';
     secondValue='';
-    currentOp=undefined;
+    currentOp=null;
 });
 
 delBttn.addEventListener('click', () =>{
@@ -39,18 +39,37 @@ function appendNumber(num){
 }
 
 function chooseOp(op){
-    if (current === '') return
-    if (previous === '') return
     currentOp = op;
-
-    firstValue=current.textContent;
+    firstValue = current.textContent;
     previous.textContent = current.textContent + currentOp;
-    current.textContent = '';
+    current.textContent = ''; 
 }
+
+function compute(){
+    secondValue = current.textContent;
+    previous.textContent = previous.textContent + current.textContent + ' = ';
+    current.textContent = (operate(currentOp, firstValue, secondValue));
+}
+
 
 function operate (op, a, b){
-    switch (op){
-        case '+': return a+b;
+    let res;
+    a = Number(a);
+    b = Number(b);
+    if (op === '+'){
+        res = a+b;
+    } else
+    if (op === '-'){
+        res = a-b;
+    } else 
+    if (op === '×') {
+        res = a*b;
+    } else
+    if (op === '÷'){
+        res = a/b;
+    } else
+    if (op === '%'){
+        res = a%b;
     }
+    return res;
 }
-
