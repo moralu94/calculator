@@ -33,6 +33,7 @@ body, html{
     border-radius: 5px;
     display: flex;
     min-width: 300px;
+    max-width: 300px;
     min-height: 70px;
     margin-top: 30px;
     padding-right: 5px;
@@ -114,4 +115,9 @@ footer{
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+a{
+    text-decoration: none;
+    color:#000000;
 }
