@@ -86,6 +86,6 @@ function operate (op, a, b){
     } else
     if (op === '%'){
         res = a%b;
-    }
+    } else return;
     return res;
 }
