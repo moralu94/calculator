@@ -1,9 +1,9 @@
-const numberBttn = document.querySelectorAll('[data-num]');
-const operationBttn = document.querySelectorAll('[data-op]');
-const ceBttn = document.querySelector('[data-clear]');
-const delBttn = document.querySelector('[data-delete]');
-const periodBttn = document.querySelector('[data-period]');
-const equalBttn = document.querySelector('[data-equal]');
+const numberBtn = document.querySelectorAll('[data-num]');
+const operationBtn = document.querySelectorAll('[data-op]');
+const ceBtn = document.querySelector('[data-clear]');
+const delBtn = document.querySelector('[data-delete]');
+const periodBtn = document.querySelector('[data-period]');
+const equalBtn = document.querySelector('[data-equal]');
 const previous = document.querySelector('.prevNum');
 const current = document.querySelector('.currentNum');
 
@@ -11,14 +11,14 @@ let firstValue='';
 let secondValue='';
 let currentOp = null;
 
-numberBttn.forEach((numBttn) =>
-    numBttn.addEventListener('click', () => appendNumber(numBttn.textContent))
+numberBtn.forEach((numBtn) =>
+    numBtn.addEventListener('click', () => appendNumber(numBtn.textContent))
 );
-operationBttn.forEach((opBttn) => {
-    opBttn.addEventListener('click', () => chooseOp(opBttn.textContent))
+operationBtn.forEach((opBtn) => {
+    opBtn.addEventListener('click', () => chooseOp(opBtn.textContent))
 });
 
-periodBttn.addEventListener('click', addPeriod());
+periodBtn.addEventListener('click', () => addPeriod());
 
 function addPeriod() {
     if (current.textContent == '') return
@@ -26,9 +26,9 @@ function addPeriod() {
     else current.textContent += '.';
 }
 
-equalBttn.addEventListener('click', () => compute());
+equalBtn.addEventListener('click', () => compute());
 
-ceBttn.addEventListener('click', clearEverything());
+ceBtn.addEventListener('click', () => clearEverything());
 
 function clearEverything() {
     current.textContent='';
@@ -38,7 +38,7 @@ function clearEverything() {
     currentOp=null;
 }
 
-delBttn.addEventListener('click', deleteNum()); 
+delBtn.addEventListener('click', () => deleteNum()); 
 
 function deleteNum(){
     current.textContent = current.textContent
